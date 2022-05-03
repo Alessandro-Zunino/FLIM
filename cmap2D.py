@@ -42,22 +42,22 @@ def showFLIM(intensity, lifetime, bounds_Tau = None, bounds_Int = None, satFacto
     that pixel is rendered with Hue outOfBoundsHue (default: violet)
 
     Input parameters
-    intensityIm:        Pixel values are photon counts.     size(intensityIm) = [h, w]
-    lifetimeIm:         Pixel values are lifetime values.   size(lifetimeIm) = [h, w]
-
-    minTau:             minimum lifetime value of the colorbar ( min(lifetimeIm(:)) ) 
-    maxTau:             maximum lifetime value of the colorbar ( max(lifetimeIm(:)) )
-    minInt:             minimum intensity value of the colorbar ( min(intensityIm(:)) ) 
-    maxInt:             maximum intensity value of the colorbar ( max(intensityIm(:)) ) 
-    invertColormap      (true)
-    outOfBoundsHue      Hue to render the out of bounds pixels (0.8)
-    figDimensions       ( [0,0, size(intensityIm,1), size(intensityIm,2)] )
-    satFactor           The span of the Hue space (0.657)
+    intensityIm:        Pixel values are photon counts.     
+    lifetimeIm:         Pixel values are lifetime values.
+    
+    bounds_Tau
+        minTau:             minimum lifetime value of the colorbar
+        maxTau:             maximum lifetime value of the colorbar
+    bounds_Int
+        minInt:             minimum intensity value of the colorbar
+        maxInt:             maximum intensity value of the colorbar
+    invertColormap:     (False)
+    outOfBoundsHue:      Hue to render the out of bounds pixels (0.8)
+    satFactor:           The span of the Hue space (0.657)
     
     Last Modified May 2022 by Alessandro Zunino
     Based on the MATLAB function written by Giorgio Tortarolo
     '''
-    
     
     if bounds_Tau is None:
         bounds_Tau = {
